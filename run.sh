@@ -1,3 +1,3 @@
 #!bin/sh
 
-java avaj_launcher.main.Main $1
+java avaj_launcher.main.Main $@
