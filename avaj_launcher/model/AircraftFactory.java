@@ -12,19 +12,17 @@ public class AircraftFactory {
 		return instance;
 	};
 
-	public Flyable newAircraft(String p_type, String p_name, Coordinates p_coordinates){
+	public Flyable newAircraft(String p_type, String p_name, Coordinates p_coordinates) throws Exception{
 		Aircraft aircraft;
 		
 		if ("baloon".equalsIgnoreCase(p_type))
 			aircraft = new Baloon(id, p_name, p_coordinates);
 		else if ("helicopter".equalsIgnoreCase(p_type))
-			aircraft = new Baloon(id, p_name, p_coordinates);
+			aircraft = new Helicopter(id, p_name, p_coordinates);
 		else if ("jetplane".equalsIgnoreCase(p_type))
-			aircraft = new Baloon(id, p_name, p_coordinates);
+			aircraft = new JetPlane(id, p_name, p_coordinates);
 		else
-			aircraft = null;
-//		else
-//			throw new Exception("Unknown Aircraft Type");
+			throw new Exception("Unknown Aircraft Type");
 		id ++;
 		return aircraft;
 	}

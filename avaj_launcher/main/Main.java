@@ -5,21 +5,52 @@ import java.io.FileNotFoundException;
 import avaj_launcher.simulation.Simulation;
 
 class Main {
+    private static Boolean DEBUG = false;
+
     public static void main(String[] args) {
         if (args.length != 1){
-            System.out.println("usage: 'sh run.sh file'");
+            usage();
             return ;
         }
 
+        if (args[0].equals("--help")){
+            help();
+            return ;
+        }
+    
         Simulation simulation = Simulation.geSimulation();
         try {
-            simulation.loadFromFile(args[0]);
+            simulation.loadFile(args[0]);
             simulation.runSimulation();
         } catch (FileNotFoundException e){
+            if (DEBUG)
+                e.printStackTrace();
             System.out.println("File '" + args[0] + "' not found");
-        } 
-        catch (Exception e){
-            e.printStackTrace();
+        } catch (Exception e){
+            if (DEBUG)
+                e.printStackTrace();
+            System.out.println("Error desconocido");
         }
+    }
+
+    private static void help(){
+        System.out.println(
+            "java avaj_launcher.main.Main [FILE]\n" +
+            "java avaj_launcher.main.Main --help\n\n" +
+            "This program runs a simulation of aircrafts, weather, and towers.\n" +
+            "Aircrafts have a type (Baloon, JetPlane, Helicopter), name and coordinates (Longitude, Latitude, Height).\n" +
+            "Each iteration, an algorithm simulates the weather. The weather is SUN, FOG, RAIN or SNOW. Weather is coordinate based.\n" +
+            "The aircrafts move and print a message based on the weather at their position.\n" +
+            "Aircrafts that reach height 0 are considered as grounded, they don't update anymore.\n" +
+            "\nInput format.\n" +
+            "The input is a single text file.\n" +
+            "The first line of the text file must be a number representing how many iterations the program will simulate.\n" +
+            "Each following line represents an aircraft, and must be formatted this way: TYPE NAME LONGITUDE LATITUDE HEIGHT."
+        );
+    }
+
+    private static void usage(){
+        System.out.println("usage: 'java avaj_launcher.main.Main [FILE]'.");
+        System.out.println("Try avaj_launcher.main.Main --help for detailed information.");
     }
 }
