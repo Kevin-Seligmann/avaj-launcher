@@ -1,6 +1,8 @@
 package avaj_launcher.main;
 
-import avaj_launcher.parser.Parser;
+import java.io.FileNotFoundException;
+
+import avaj_launcher.simulation.Simulation;
 
 class Main {
     public static void main(String[] args) {
@@ -8,8 +10,16 @@ class Main {
             System.out.println("usage: 'sh run.sh file'");
             return ;
         }
-        Parser parser = new Parser();
-        parser.openFile(args[0]);
-        parser.printFile();
+
+        Simulation simulation = Simulation.geSimulation();
+        try {
+            simulation.loadFromFile(args[0]);
+            simulation.runSimulation();
+        } catch (FileNotFoundException e){
+            System.out.println("File '" + args[0] + "' not found");
+        } 
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
