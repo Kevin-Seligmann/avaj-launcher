@@ -1,7 +1,7 @@
 package avaj_launcher.exception;
 
-public class BadInputFileException extends Exception {
+public class BadInputFileException extends RuntimeException {
 	public BadInputFileException(String message){
-		super(message);
+		super("Input file format error: " + message);
 	}
 }

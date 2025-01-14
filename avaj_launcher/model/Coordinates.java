@@ -19,4 +19,7 @@ public class Coordinates {
 	public void setHeight(int height){this.height = height;}
 	public void setLatitude(int latitude){this.latitude = latitude;}
 
+	public String toString(){
+		return "LONG: " + longitude + ", LAT: " + latitude + ", HGT: " + height;
+	}
 }

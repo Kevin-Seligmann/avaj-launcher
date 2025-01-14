@@ -1,27 +1,37 @@
 package avaj_launcher.model;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+
+import avaj_launcher.util.FileManager;
 
 public class Tower {
 	private List<Flyable> observers;
+	private Iterator<Flyable> flyableIt;
 
-	public void register(Flyable p_flyable){
+	public void register(Flyable p_flyable)  {
 		Aircraft aircraft = (Aircraft) p_flyable;
 
 		observers.add(aircraft);
-		System.out.println("Tower says: " + aircraft.toString() + " registered to weather tower.");
+		FileManager.getFileInstance().printToOutputFile("Tower says: " + aircraft.toString() + " registered to weather tower.");
 	}
 
-	public void unregister(Flyable p_flyable){
+	public void unregister(Flyable p_flyable)  {
 		Aircraft aircraft = (Aircraft) p_flyable;
 
-		observers.remove(p_flyable);
-		System.out.println("Tower says: " + aircraft.toString() + " unregistered to weather tower.");
+		flyableIt.remove();
+		FileManager.getFileInstance().printToOutputFile("Tower says: " + aircraft.toString() + " unregistered to weather tower.");
 	}
 
 	protected Tower(){
 		this.observers = new ArrayList<Flyable>();
 	}
-	protected void conditionChanged(){}
+	
+	protected void conditionChanged() {
+		flyableIt = observers.iterator();
+
+		while (flyableIt.hasNext())
+			flyableIt.next().updateConditions();
+	}
 }

@@ -1,0 +1,11 @@
+Tower says: Baloon#GLOBO(1) registered to weather tower.
+Tower says: Helicopter#ELI5(2) registered to weather tower.
+Baloon#GLOBO(1) RAIN.
+Helicopter#ELI5(2) FOG.
+Baloon#GLOBO(1) FOG.
+Baloon#GLOBO(1) landing.
+Tower says: Baloon#GLOBO(1) unregistered to weather tower.
+Helicopter#ELI5(2) SNOW.
+Helicopter#ELI5(2) SNOW.
+Helicopter#ELI5(2) landing.
+Tower says: Helicopter#ELI5(2) unregistered to weather tower.

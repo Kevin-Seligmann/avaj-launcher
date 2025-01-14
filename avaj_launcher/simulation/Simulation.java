@@ -1,65 +1,98 @@
 package avaj_launcher.simulation;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+
+import avaj_launcher.exception.BadInputFileException;
 import avaj_launcher.model.*;
 
 public class Simulation {
-	private static int COUNT_STARTING_POINT = 1;
+	private static int SIM_COUNT_STARTING_POINT = 1;
 	private static int MIN_AIRCRAFT_QTY = 1;
 	private static Simulation instance;
-	private WeatherTower tower;
+	private List<Flyable> aircrafts;
 	private int sim_count;
 	private File file;
 	private Scanner sc;
 
 	private Simulation(){
-		sim_count = COUNT_STARTING_POINT;
+		sim_count = SIM_COUNT_STARTING_POINT;
 	}
 
-	public static Simulation geSimulation(){
+	public static Simulation getSimulation(){
 		if (instance == null)
 			instance = new Simulation();
 		return instance;
 	};
 
-	public void loadFile(String file) throws Exception {
+	public void loadFile(String file) {
 		this.file = new File(file);
-		sc = new Scanner(this.file);
-
+		try {
+			sc = new Scanner(this.file);
+		} catch (FileNotFoundException e) {
+			throw new BadInputFileException("File not found.");
+		}
 		if (!sc.hasNextInt()){
-			throw new Exception("The file's format is incorrect. First argument must be a number representing how many times the weather will change (Length of simulation)");
+			throw new BadInputFileException("Number of simulations not provided.");
 		}
 		sim_count = sc.nextInt();
-		if (sim_count <= MIN_AIRCRAFT_QTY){
-			throw new Exception("Must provide a greater than 0 simulation length");
+		if (sim_count < MIN_AIRCRAFT_QTY){
+			throw new BadInputFileException("Number of simulation should be greater than 0.");
 		}
 		sc.nextLine();
 		if (!sc.hasNextLine()){
-			throw new Exception("The file must provide at least one aircraft");
+			throw new BadInputFileException("Must provide at least one aircraft.");
 		}
+		loadAircrafts();
 	}
 
-	public void runSimulation() throws Exception{
-		tower = new WeatherTower();
-		registerAircrafts();
+	public void runSimulation(){
+		WeatherTower tower = new WeatherTower();
+		for (Flyable aircraft: aircrafts){
+			aircraft.registerTower(tower);
+		}
+		for (int i = 0; i < sim_count; i ++){
+			tower.changeWeather();
+		}
+		sc.close();
 	}
 
-	private void registerAircrafts() throws Exception{
-		Flyable aircraft;
+	private void loadAircrafts() {
 		AircraftFactory aircraftFactory = AircraftFactory.getAircraftFactoryInstance();
 
+		aircrafts = new ArrayList<Flyable>();
 		while (sc.hasNextLine()){
 			String line = sc.nextLine();
 			String[] arguments = line.split("\\s+");
 	
 			if (arguments.length != 5)
-				throw new Exception("Invalid input: TYPE NAME C1 C2 C3");
+				throw new BadInputFileException("Aircraft format: TYPE NAME LONGITUDE LATITUDE HEIGHT.");
 			String type = arguments[0];
 			String name = arguments[1];
-			Coordinates coordinates = new Coordinates(Integer.valueOf(arguments[2]), Integer.valueOf(arguments[3]), Integer.valueOf(arguments[4]));
-			aircraft = aircraftFactory.newAircraft(type, name, coordinates);
-			aircraft.registerTower(tower);
+			Coordinates coordinates = new Coordinates(
+				getCoordinate(arguments[2], Aircraft.MIN_LONGITUDE, Integer.MAX_VALUE, "Longitude"), 
+				getCoordinate(arguments[3], Aircraft.MIN_LATITUDE, Integer.MAX_VALUE, "Latitude"), 
+				getCoordinate(arguments[4], Aircraft.MIN_HEIGT, Aircraft.MAX_HEIGHT, "Height")
+			);
+			aircrafts.add(aircraftFactory.newAircraft(type, name, coordinates));
 		}
+	}
+
+	private int getCoordinate(String str, int min, int max, String type) {
+		int rta;
+
+		try {
+			rta = Integer.valueOf(str);
+		} catch (NumberFormatException e){
+			throw new BadInputFileException(str + " is not a valid number.");
+		}
+		if (rta < min)
+			throw new BadInputFileException(type + ": Must be greater than " + min +  ".");
+		if (rta > max)
+			throw new BadInputFileException(type + ": Must be less than " + min + ".");
+		return rta;
 	}
 }

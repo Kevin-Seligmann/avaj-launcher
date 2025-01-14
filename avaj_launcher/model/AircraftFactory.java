@@ -1,10 +1,14 @@
 package avaj_launcher.model;
 
+import avaj_launcher.exception.BadInputFileException;
+
 public class AircraftFactory {
 	private static AircraftFactory instance;
 	private int id;
 
-	private AircraftFactory(){}
+	private AircraftFactory(){
+		id = 1;
+	}
 
 	public static AircraftFactory getAircraftFactoryInstance(){
 		if (instance == null)
@@ -12,7 +16,7 @@ public class AircraftFactory {
 		return instance;
 	};
 
-	public Flyable newAircraft(String p_type, String p_name, Coordinates p_coordinates) throws Exception{
+	public Flyable newAircraft(String p_type, String p_name, Coordinates p_coordinates){
 		Aircraft aircraft;
 		
 		if ("baloon".equalsIgnoreCase(p_type))
@@ -22,7 +26,7 @@ public class AircraftFactory {
 		else if ("jetplane".equalsIgnoreCase(p_type))
 			aircraft = new JetPlane(id, p_name, p_coordinates);
 		else
-			throw new Exception("Unknown Aircraft Type");
+			throw new BadInputFileException("Unknown Aircraft Type");
 		id ++;
 		return aircraft;
 	}
