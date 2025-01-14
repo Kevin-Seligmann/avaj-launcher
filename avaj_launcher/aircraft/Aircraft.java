@@ -61,8 +61,6 @@ public class Aircraft extends Flyable {
 		coordinates.setLongitude(longitude);
 	}
 
-	public void updateConditions(){};
-
 	private void limit_warning(){
 		System.out.println("Warning: Aircraft " + name + " has reached unrealistic coordinates: (" + coordinates + ").");
 		System.out.println("Try running a more realistic simulation.");
@@ -71,4 +69,6 @@ public class Aircraft extends Flyable {
 	public String toString(){
 		return "#" + name + "(" + id + ")";
 	}
+
+	public void updateConditions(){};
 }

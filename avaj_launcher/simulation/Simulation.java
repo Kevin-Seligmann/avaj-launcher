@@ -30,6 +30,17 @@ public class Simulation {
 		return instance;
 	};
 
+	public void runSimulation(){
+		WeatherTower tower = new WeatherTower();
+		for (Flyable aircraft: aircrafts){
+			aircraft.registerTower(tower);
+		}
+		for (int i = 0; i < sim_count; i ++){
+			tower.changeWeather();
+		}
+		sc.close();
+	}
+
 	public void loadFile(String file) {
 		this.file = new File(file);
 		try {
@@ -49,17 +60,6 @@ public class Simulation {
 			throw new BadInputFileException("Must provide at least one aircraft.");
 		}
 		loadAircrafts();
-	}
-
-	public void runSimulation(){
-		WeatherTower tower = new WeatherTower();
-		for (Flyable aircraft: aircrafts){
-			aircraft.registerTower(tower);
-		}
-		for (int i = 0; i < sim_count; i ++){
-			tower.changeWeather();
-		}
-		sc.close();
 	}
 
 	private void loadAircrafts() {
@@ -89,7 +89,7 @@ public class Simulation {
 		try {
 			rta = Integer.valueOf(str);
 		} catch (NumberFormatException e){
-			throw new BadInputFileException(str + " is not a valid number.");
+			throw new BadInputFileException(str + " is not a valid number. (Out of bound values for Integer types are invalid)");
 		}
 		if (rta < min)
 			throw new BadInputFileException(type + ": Must be greater than " + min +  ".");

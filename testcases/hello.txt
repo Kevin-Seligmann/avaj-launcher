@@ -1,1 +1,0 @@
-Hello. I'm just text. ! I'm here to check that files can be open, read, and close.

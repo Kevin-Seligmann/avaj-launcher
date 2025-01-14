@@ -23,14 +23,15 @@ class Main {
             simulation.loadFile(args[0]);
             simulation.runSimulation();
         } catch (FileHandlingException e){
-            e.printStackTrace();
+        //    e.printStackTrace();
+            System.out.println(e.getMessage());
         } catch (BadInputFileException e) {
-            e.printStackTrace();
+        //    e.printStackTrace();
             System.out.println(e.getMessage());
             advise();
         } catch (Exception e){
-            e.printStackTrace();
-            System.out.println("Error desconocido");
+         //   e.printStackTrace();
+            System.out.println("Unknown error.");
         }
     }
 
