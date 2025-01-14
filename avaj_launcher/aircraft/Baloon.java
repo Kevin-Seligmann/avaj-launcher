@@ -1,5 +1,6 @@
-package avaj_launcher.model;
+package avaj_launcher.aircraft;
 
+import avaj_launcher.simulation.Coordinates;
 import avaj_launcher.util.FileManager;
 
 public class Baloon extends Aircraft {

@@ -1,11 +1,168 @@
-Tower says: Baloon#GLOBO(1) registered to weather tower.
-Tower says: Helicopter#ELI5(2) registered to weather tower.
-Baloon#GLOBO(1) RAIN.
-Helicopter#ELI5(2) FOG.
-Baloon#GLOBO(1) FOG.
-Baloon#GLOBO(1) landing.
-Tower says: Baloon#GLOBO(1) unregistered to weather tower.
-Helicopter#ELI5(2) SNOW.
-Helicopter#ELI5(2) SNOW.
-Helicopter#ELI5(2) landing.
-Tower says: Helicopter#ELI5(2) unregistered to weather tower.
+Tower says: Baloon#B1(1) registered to weather tower.
+Tower says: Baloon#B2(2) registered to weather tower.
+Tower says: JetPlane#J1(3) registered to weather tower.
+Tower says: Helicopter#H1(4) registered to weather tower.
+Tower says: Helicopter#H2(5) registered to weather tower.
+Tower says: Helicopter#H3(6) registered to weather tower.
+Tower says: Baloon#B3(7) registered to weather tower.
+Tower says: JetPlane#J2(8) registered to weather tower.
+Tower says: Helicopter#H4(9) registered to weather tower.
+Baloon#B1(1) SNOW.
+Baloon#B2(2) RAIN.
+JetPlane#J1(3) SUN.
+Helicopter#H1(4) FOG.
+Helicopter#H2(5) SUN.
+Helicopter#H3(6) SNOW.
+Baloon#B3(7) FOG.
+JetPlane#J2(8) SUN.
+Helicopter#H4(9) SUN.
+Baloon#B1(1) SNOW.
+Baloon#B1(1) landing.
+Tower says: Baloon#B1(1) unregistered to weather tower.
+Baloon#B2(2) RAIN.
+JetPlane#J1(3) SNOW.
+Helicopter#H1(4) FOG.
+Helicopter#H2(5) SNOW.
+Helicopter#H3(6) SNOW.
+Baloon#B3(7) SUN.
+JetPlane#J2(8) SUN.
+Helicopter#H4(9) FOG.
+Baloon#B2(2) FOG.
+JetPlane#J1(3) SNOW.
+Helicopter#H1(4) RAIN.
+Helicopter#H2(5) SUN.
+Helicopter#H3(6) SUN.
+Baloon#B3(7) FOG.
+JetPlane#J2(8) FOG.
+Helicopter#H4(9) SNOW.
+Baloon#B2(2) FOG.
+JetPlane#J1(3) RAIN.
+Helicopter#H1(4) SUN.
+Helicopter#H2(5) SNOW.
+Helicopter#H3(6) SNOW.
+Baloon#B3(7) FOG.
+JetPlane#J2(8) RAIN.
+Helicopter#H4(9) FOG.
+Baloon#B2(2) SUN.
+JetPlane#J1(3) SUN.
+Helicopter#H1(4) FOG.
+Helicopter#H2(5) SUN.
+Helicopter#H3(6) SUN.
+Baloon#B3(7) SUN.
+JetPlane#J2(8) FOG.
+Helicopter#H4(9) FOG.
+Baloon#B2(2) FOG.
+JetPlane#J1(3) FOG.
+Helicopter#H1(4) RAIN.
+Helicopter#H2(5) SNOW.
+Helicopter#H3(6) SNOW.
+Baloon#B3(7) FOG.
+JetPlane#J2(8) SNOW.
+Helicopter#H4(9) SNOW.
+Baloon#B2(2) FOG.
+JetPlane#J1(3) RAIN.
+Helicopter#H1(4) FOG.
+Helicopter#H2(5) SUN.
+Helicopter#H3(6) SUN.
+Baloon#B3(7) FOG.
+JetPlane#J2(8) FOG.
+Helicopter#H4(9) SUN.
+Baloon#B2(2) SUN.
+JetPlane#J1(3) FOG.
+Helicopter#H1(4) SNOW.
+Helicopter#H2(5) SNOW.
+Helicopter#H3(6) SNOW.
+Baloon#B3(7) SUN.
+JetPlane#J2(8) RAIN.
+Helicopter#H4(9) SNOW.
+Baloon#B2(2) FOG.
+JetPlane#J1(3) SNOW.
+Helicopter#H1(4) SUN.
+Helicopter#H2(5) SUN.
+Helicopter#H3(6) SUN.
+Baloon#B3(7) FOG.
+JetPlane#J2(8) FOG.
+Helicopter#H4(9) SUN.
+Baloon#B2(2) FOG.
+JetPlane#J1(3) FOG.
+Helicopter#H1(4) SNOW.
+Helicopter#H1(4) landing.
+Tower says: Helicopter#H1(4) unregistered to weather tower.
+Helicopter#H2(5) SNOW.
+Helicopter#H2(5) landing.
+Tower says: Helicopter#H2(5) unregistered to weather tower.
+Helicopter#H3(6) SNOW.
+Baloon#B3(7) FOG.
+JetPlane#J2(8) SNOW.
+Helicopter#H4(9) SNOW.
+Baloon#B2(2) SUN.
+JetPlane#J1(3) RAIN.
+Helicopter#H3(6) SUN.
+Baloon#B3(7) SUN.
+JetPlane#J2(8) FOG.
+Helicopter#H4(9) SUN.
+Baloon#B2(2) FOG.
+JetPlane#J1(3) FOG.
+Helicopter#H3(6) SNOW.
+Baloon#B3(7) FOG.
+JetPlane#J2(8) RAIN.
+Helicopter#H4(9) SNOW.
+Baloon#B2(2) FOG.
+JetPlane#J1(3) SNOW.
+Helicopter#H3(6) SUN.
+Baloon#B3(7) FOG.
+JetPlane#J2(8) FOG.
+Helicopter#H4(9) SUN.
+Baloon#B2(2) SUN.
+JetPlane#J1(3) FOG.
+Helicopter#H3(6) SNOW.
+Baloon#B3(7) SUN.
+JetPlane#J2(8) SNOW.
+Helicopter#H4(9) SNOW.
+Helicopter#H4(9) landing.
+Tower says: Helicopter#H4(9) unregistered to weather tower.
+Baloon#B2(2) FOG.
+JetPlane#J1(3) RAIN.
+Helicopter#H3(6) SUN.
+Baloon#B3(7) FOG.
+JetPlane#J2(8) FOG.
+Baloon#B2(2) FOG.
+JetPlane#J1(3) FOG.
+Helicopter#H3(6) SNOW.
+Baloon#B3(7) FOG.
+JetPlane#J2(8) RAIN.
+Baloon#B2(2) SUN.
+JetPlane#J1(3) SNOW.
+Helicopter#H3(6) SUN.
+Baloon#B3(7) SUN.
+JetPlane#J2(8) FOG.
+Baloon#B2(2) FOG.
+JetPlane#J1(3) FOG.
+Helicopter#H3(6) SNOW.
+Helicopter#H3(6) landing.
+Tower says: Helicopter#H3(6) unregistered to weather tower.
+Baloon#B3(7) FOG.
+JetPlane#J2(8) SNOW.
+Baloon#B2(2) FOG.
+JetPlane#J1(3) RAIN.
+Baloon#B3(7) FOG.
+JetPlane#J2(8) FOG.
+Baloon#B2(2) SUN.
+JetPlane#J1(3) FOG.
+Baloon#B3(7) SUN.
+JetPlane#J2(8) RAIN.
+Baloon#B2(2) FOG.
+JetPlane#J1(3) SNOW.
+JetPlane#J1(3) landing.
+Tower says: JetPlane#J1(3) unregistered to weather tower.
+Baloon#B3(7) FOG.
+JetPlane#J2(8) FOG.
+Baloon#B2(2) FOG.
+Baloon#B3(7) FOG.
+JetPlane#J2(8) SNOW.
+Baloon#B2(2) SUN.
+Baloon#B3(7) SUN.
+JetPlane#J2(8) FOG.
+Baloon#B2(2) FOG.
+Baloon#B3(7) FOG.
+JetPlane#J2(8) RAIN.

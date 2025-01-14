@@ -1,9 +1,11 @@
-package avaj_launcher.model;
+package avaj_launcher.simulation;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import avaj_launcher.aircraft.Flyable;
+import avaj_launcher.aircraft.Aircraft;
 import avaj_launcher.util.FileManager;
 
 public class Tower {

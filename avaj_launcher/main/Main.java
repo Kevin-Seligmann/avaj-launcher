@@ -2,9 +2,9 @@ package avaj_launcher.main;
 
 import java.io.FileNotFoundException;
 
-import avaj_launcher.exception.BadInputFileException;
-import avaj_launcher.exception.FileHandlingException;
 import avaj_launcher.simulation.Simulation;
+import avaj_launcher.util.BadInputFileException;
+import avaj_launcher.util.FileHandlingException;
 
 class Main {
     public static void main(String[] args) {

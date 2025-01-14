@@ -1,4 +1,4 @@
-package avaj_launcher.exception;
+package avaj_launcher.util;
 
 public class FileHandlingException extends RuntimeException {
 	public FileHandlingException(String message){

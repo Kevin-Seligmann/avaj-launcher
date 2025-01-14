@@ -4,8 +4,6 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import avaj_launcher.exception.FileHandlingException;
-
 public class FileManager {
 	private static final String OUTPUT_FILE_NAME = "simulation.txt";
 	private static FileManager instance;

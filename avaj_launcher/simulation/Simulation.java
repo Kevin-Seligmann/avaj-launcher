@@ -6,8 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import avaj_launcher.exception.BadInputFileException;
-import avaj_launcher.model.*;
+import avaj_launcher.aircraft.AircraftFactory;
+import avaj_launcher.aircraft.Flyable;
+import avaj_launcher.aircraft.Aircraft;
+import avaj_launcher.util.BadInputFileException;
 
 public class Simulation {
 	private static int SIM_COUNT_STARTING_POINT = 1;
@@ -92,7 +94,7 @@ public class Simulation {
 		if (rta < min)
 			throw new BadInputFileException(type + ": Must be greater than " + min +  ".");
 		if (rta > max)
-			throw new BadInputFileException(type + ": Must be less than " + min + ".");
+			throw new BadInputFileException(type + ": Must be less than " + max + ".");
 		return rta;
 	}
 }

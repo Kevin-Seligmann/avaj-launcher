@@ -1,6 +1,7 @@
-package avaj_launcher.model;
+package avaj_launcher.aircraft;
 
 import avaj_launcher.util.FileManager;
+import avaj_launcher.simulation.Coordinates;
 
 public class Aircraft extends Flyable {
 	public static final int MAX_HEIGHT = 100;

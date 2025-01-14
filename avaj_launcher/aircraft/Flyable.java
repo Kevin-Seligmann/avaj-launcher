@@ -1,4 +1,6 @@
-package avaj_launcher.model;
+package avaj_launcher.aircraft;
+
+import avaj_launcher.simulation.WeatherTower;
 
 public abstract class Flyable {
 	protected WeatherTower weatherTower;

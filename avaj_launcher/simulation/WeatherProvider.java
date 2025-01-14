@@ -1,4 +1,4 @@
-package avaj_launcher.model;
+package avaj_launcher.simulation;
 
 import java.util.Random;
 

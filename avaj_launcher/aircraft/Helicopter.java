@@ -1,20 +1,21 @@
-package avaj_launcher.model;
+package avaj_launcher.aircraft;
 
+import avaj_launcher.simulation.Coordinates;
 import avaj_launcher.util.FileManager;
 
-public class JetPlane extends Aircraft {
-	private static int RAIN_LATITUDE_CHANGE = 5;
-	private static int SUN_LATITUDE_CHANGE = 10;
+public class Helicopter extends Aircraft {
+	private static int RAIN_LONGITUDE_CHANGE = 5;
+	private static int SUN_LONGITUDE_CHANGE = 10;
 	private static int SUN_HEIGHT_CHANGE = 2;
-	private static int FOG_LATITUDE_CHANGE = 1;
-	private static int SNOW_HEIGHT_CHANGE = -7;
+	private static int FOG_LONGITUDE_CHANGE = 1;
+	private static int SNOW_HEIGHT_CHANGE = -12;
 	private String currentWeather;
 
-	public JetPlane(long p_id, String p_name, Coordinates p_coordinates){super(p_id, p_name, p_coordinates);}
+	public Helicopter(long p_id, String p_name, Coordinates p_coordinates){super(p_id, p_name, p_coordinates);}
 
 	public void updateConditions() {
-		FileManager.getFileInstance().printToOutputFile(this + " " + currentWeather + ".");
 		if (currentWeather != null){
+			FileManager.getFileInstance().printToOutputFile(this + " " + currentWeather + ".");
 			switch (currentWeather) {
 				case "RAIN": rainWeather(); break;
 				case "FOG": fogWeather(); break;
@@ -27,16 +28,16 @@ public class JetPlane extends Aircraft {
 	}
 
 	private void rainWeather(){
-		changeLatitude(RAIN_LATITUDE_CHANGE);
+		changeLongitude(RAIN_LONGITUDE_CHANGE);
 	}
 
 	private void sunWeather() {
-		changeLatitude(SUN_LATITUDE_CHANGE);
 		changeHeight(SUN_HEIGHT_CHANGE);
+		changeLongitude(SUN_LONGITUDE_CHANGE);
 	}
 
 	private void fogWeather(){
-		changeLatitude(FOG_LATITUDE_CHANGE);
+		changeLongitude(FOG_LONGITUDE_CHANGE);
 	}
 
 	private void snowWeather() {
@@ -45,6 +46,6 @@ public class JetPlane extends Aircraft {
 
 
 	public String toString(){
-		return "JetPlane" + super.toString();
+		return "Helicopter" + super.toString();
 	}
 }

@@ -1,6 +1,7 @@
-package avaj_launcher.model;
+package avaj_launcher.aircraft;
 
-import avaj_launcher.exception.BadInputFileException;
+import avaj_launcher.simulation.Coordinates;
+import avaj_launcher.util.BadInputFileException;
 
 public class AircraftFactory {
 	private static AircraftFactory instance;
